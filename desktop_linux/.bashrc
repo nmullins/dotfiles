@@ -5,7 +5,14 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-PS1='\e[1;34m [\u \w] $ \e[m '
+PS1='The Dungeon Master \w $> '
+
+#if [ $(id -u) -eq 0 ];
+#then # you are root, set red colour prompt
+#  PS1="\\[$(tput setaf 1)\\]\\u@\\h:\\w #\\[$(tput sgr0)\\]"
+#  else # normal
+#        PS1="[\\u@\\h:\\w] $ "
+# fi
 
 # User specific aliases and functions
 alias ls='ls -la --color'
@@ -32,8 +39,9 @@ alias push='sudo git push'
 alias commit='sudo git commit -m'
 alias checkout='sudo git checkout'
 
-background='black'
+LS_COLORS='no=00:fi=1;31:di=1;34:*.html=1;36:*.php=1;36:*.js=1;36:*.css=1;36:*.cpp=1;33:*.cs=1;33:*.java=1;35'
 
 
-# Color code files and directories when doing ls
-LS_COLORS='no=00:fi=0;93:di=0;34:ln=00;36:pi=40;33:so=00;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;35:*.cmd=00;32:*.exe=00;32:*.sh=00;32:*.gz=00;31:*.cpp=0;33:*.cs=0;33:*.php=0;33:*.java=0;33:*.js=0;33:*.pl=0;33:*.pm=0;33:*.pod=00;96:*.conf=00;33:*.off=00;9:*.jpg=00;94:*.png=00;94:*.xcf=00;94:*.JPG=00;94:*.gif=00;94:*.pdf=00;91' ; export LS_COLORS
+
+
+
